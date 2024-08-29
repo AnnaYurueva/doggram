@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 </script>
 <template>
-    <header class="bg-white">
+    <header class="bg-white border-b-2">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="md:flex md:items-center md:gap-12">
@@ -25,11 +25,11 @@ import { RouterLink } from 'vue-router'
                     <nav aria-label="Global">
                         <ul class="flex items-center gap-6 text-sm">
                             <li>
-                                <RouterLink class="text-violet-800 transition hover:text-violet-800/75" to="#"> Fanfact
+                                <RouterLink class="text-violet-800 transition hover:text-violet-800/75" to="/fact"> Fanfact
                                 </RouterLink>
                             </li>
                             <li>
-                                <RouterLink class="text-violet-800 transition hover:text-violet-800/75" to="#"> Doggram
+                                <RouterLink class="text-violet-800 transition hover:text-violet-800/75" to="/"> Doggram
                                 </RouterLink>
                             </li>
                         </ul>
