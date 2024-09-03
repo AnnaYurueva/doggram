@@ -25,3 +25,13 @@ export const addFotoToFavorites = async (imageId: string) => {
         .then((res) => console.log(res.data))
         .catch((err) => console.error(err));
 }
+
+export const getFavorites = async () => {
+    const dogsFoto = await instance.get(`/favourites?sub_id=${TEST_USER_ID}`)
+
+    return dogsFoto.data;
+}
+
+export const deleteFotoFromFavorites = async (id: number) => {
+    await instance.delete(`/favourites/${id}`)
+}

@@ -32,6 +32,11 @@ import { RouterLink } from 'vue-router'
                                 <RouterLink class="text-violet-800 transition hover:text-violet-800/75" to="/"> Doggram
                                 </RouterLink>
                             </li>
+                            <li>
+                                <RouterLink class="text-violet-800 transition hover:text-violet-800/75" to="/favorites">
+                                    Favorites
+                                </RouterLink>
+                            </li>
                         </ul>
                     </nav>
                 </div>
