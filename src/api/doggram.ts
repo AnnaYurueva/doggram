@@ -1,5 +1,6 @@
 import type { IFoto } from "@/types/foto";
 import axios from "axios";
+import { useUserStore } from "@/stores/user";
 
 const instance = axios.create({
     baseURL: 'https://api.thedogapi.com/v1',
@@ -7,7 +8,12 @@ const instance = axios.create({
         'x-api-key': 'live_TCiQXkp5v4N4vgrULL9fmADXorjmOZHY2tllmwuoWyVQDD5LTRJvSTq8bpNcwift'
     }
 });
+
 const TEST_USER_ID = 'my-user-1111'
+
+const getUserId = () => {
+    return useUserStore().getUserId
+}
 
 export const getInitalDogsFotos: IFoto[] | any = async () => {
     const dogsFoto = await instance.get('/images/search?format=json&limit=10')
@@ -18,7 +24,7 @@ export const getInitalDogsFotos: IFoto[] | any = async () => {
 export const addFotoToFavorites = async (imageId: string) => {
     const data = {
         "image_id": imageId,
-        "sub_id": TEST_USER_ID
+        "sub_id": getUserId()
     };
 
     instance.post('/favourites', data)
@@ -27,7 +33,7 @@ export const addFotoToFavorites = async (imageId: string) => {
 }
 
 export const getFavorites = async () => {
-    const dogsFoto = await instance.get(`/favourites?sub_id=${TEST_USER_ID}`)
+    const dogsFoto = await instance.get(`/favourites?sub_id=${getUserId()}`)
 
     return dogsFoto.data;
 }

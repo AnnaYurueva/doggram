@@ -1,5 +1,5 @@
 <template>
-    <div class="m-4 columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
+    <div v-if="fotos.length" class="m-4 columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
         <div v-for="item of fotos"
             class="flex flex-col rounded-lg mb-4 overflow-hidden group transition-all bg-gray-900 relative">
             <img class="h-auto max-w-full w-full group-hover:opacity-50 transition-all" :src="item.image.url"
@@ -14,6 +14,14 @@
                 </svg>
             </button>
         </div>
+    </div>
+    <div v-else class="m-4">
+        <h2 class="text-3xl font-black mb-2">It's empty here</h2>
+        <p class="text-lg">But you can add your favorite photos here from
+            <RouterLink class="text-violet-800 underline" to="/">
+                here
+            </RouterLink>
+        </p>
     </div>
 </template>
 
