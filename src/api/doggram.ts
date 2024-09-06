@@ -38,6 +38,11 @@ export const getFavorites = async () => {
     return dogsFoto.data;
 }
 
+export const getBreeds = async () => {
+    const breeds = await instance.get('/breeds')
+    return breeds.data
+}
+
 export const deleteFotoFromFavorites = async (id: number) => {
     await instance.delete(`/favourites/${id}`)
 }

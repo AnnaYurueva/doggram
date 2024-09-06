@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FunfactView from '../views/FunfactView.vue'
 import FavoritesView from '../views/FavoritesView.vue'
+import AccountView from '../views/AccountView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,12 +30,20 @@ const router = createRouter({
       meta: {
         title: 'Favorites'
       }
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: AccountView,
+      meta: {
+        title: 'Account'
+      }
     }
   ]
 })
 
 router.beforeEach((to, from) => {
-  document.title = to.meta?.title ?? 'Default Title'
+  document.title = to.meta?.title ?? 'Doggram'
 })
 
 export default router

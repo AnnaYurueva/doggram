@@ -3,7 +3,6 @@ import { onMounted } from 'vue';
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
 import { useUserStore } from "@/stores/user";
-import { isConstructorDeclaration } from 'typescript';
 
 const store = useUserStore()
 
@@ -17,7 +16,6 @@ onMounted(() => {
   }
 
   store.setUserId(id)
-  console.log(store.getUserId)
 })
 </script>
 
