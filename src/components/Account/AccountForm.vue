@@ -105,7 +105,8 @@
             <button type="submit" class="rounded-md bg-violet-600 px-5 py-3 font-medium text-white">
                 Save
             </button>
-            <button @click="emits('closeForm')" class="rounded-md bg-gray-100 px-5 py-3 font-medium text-violet-800">
+            <button @click.prevent="emits('closeForm')"
+                class="rounded-md bg-gray-100 px-5 py-3 font-medium text-violet-800">
                 Cancel
             </button>
         </div>
