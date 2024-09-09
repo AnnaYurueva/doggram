@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { RouterView } from 'vue-router'
-import Header from './components/Header.vue'
+import Header from '@/components/Header.vue'
 import { useUserStore } from "@/stores/user";
 
 const store = useUserStore()
